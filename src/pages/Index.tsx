@@ -113,7 +113,7 @@ function Index() {
       gender: 'Девочка',
       color: 'Кремово-серый',
       price: '88 000 ₽',
-      image: 'https://cdn.poehali.dev/files/616bccac-66cf-4d2b-b72c-ee45436df1b3.jpg',
+      image: 'https://cdn.poehali.dev/files/351fdd97-76e4-40cc-ae23-0f39d002483d.jpg',
       available: true,
       description: 'Утончённая красавица редкого окраса. Спокойная и интеллигентная. Прекрасно подходит для разведения и выставочной карьеры.',
       parents: 'Мать: Ch. Королева Клеопатра / Отец: GrCh. Рамзес II',
