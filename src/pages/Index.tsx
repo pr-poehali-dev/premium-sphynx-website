@@ -42,7 +42,7 @@ function Index() {
       age: '3 месяца',
       gender: 'Мальчик',
       color: 'Голубой',
-      price: '80 000 ₽',
+      price: '350 000 ₽',
       image: 'https://cdn.poehali.dev/files/fdb687bf-1051-40b9-bc9d-8be3b1fb1995.jpg',
       available: true,
       description: 'Активный и игривый котёнок с отличным характером. Очень ласковый, любит внимание и общение с людьми. Идеально подойдёт для семьи с детьми.',
@@ -56,11 +56,11 @@ function Index() {
       age: '2.5 месяца',
       gender: 'Девочка',
       color: 'Кремовый',
-      price: '90 000 ₽',
+      price: '350 000 ₽',
       image: 'https://cdn.poehali.dev/files/9d1e8a16-701a-4075-9aaf-75aae44feec8.jpg',
       available: true,
       description: 'Элегантная девочка с королевскими манерами. Спокойная, но любознательная. Отличный экстерьер, подходит для выставок и разведения.',
-      parents: 'Мать: Ch. Королева Клеопатра / Отец: GrCh. Граф Дракула',
+      parents: 'Мать: Ch. Микки / Отец: GrCh. Сапфир',
       vaccinations: ['Первая комплексная вакцинация', 'Ревакцинация через 21 день', 'Обработка от паразитов'],
       documents: ['Родословная WCF', 'Ветеринарный паспорт', 'Договор купли-продажи', 'Гарантия здоровья']
     },
@@ -70,7 +70,7 @@ function Index() {
       age: '4 месяца',
       gender: 'Мальчик',
       color: 'Черный',
-      price: '85 000 ₽',
+      price: '350 000 ₽',
       image: 'https://cdn.poehali.dev/files/616bccac-66cf-4d2b-b72c-ee45436df1b3.jpg',
       available: false,
       description: 'Уверенный в себе котёнок с выставочным потенциалом. Уже забронирован любящей семьей.',
@@ -84,11 +84,11 @@ function Index() {
       age: '3 месяца',
       gender: 'Девочка',
       color: 'Розовый',
-      price: '95 000 ₽',
+      price: '350 000 ₽',
       image: 'https://cdn.poehali.dev/files/f321dc38-64e5-496b-b0a5-01d17f4a8b4b.jpg',
       available: true,
       description: 'Нежная девочка с мягким характером. Очень привязчивая и ласковая. Прекрасный экстерьер, идеальна для семьи и выставок.',
-      parents: 'Мать: Ch. Принцесса Диана / Отец: GrCh. Граф Дракула',
+      parents: 'Мать: Ch. Принцесса Диана / Отец: GrCh. Сапфир',
       vaccinations: ['Первая комплексная вакцинация', 'Обработка от паразитов', 'Ветеринарный паспорт'],
       documents: ['Родословная WCF', 'Ветеринарный паспорт', 'Договор купли-продажи', 'Метрика котёнка']
     },
@@ -98,7 +98,7 @@ function Index() {
       age: '2 месяца',
       gender: 'Мальчик',
       color: 'Серебристый',
-      price: '75 000 ₽',
+      price: '350 000 ₽',
       image: 'https://cdn.poehali.dev/files/8cf9d8d4-9a6b-41b8-ae95-8c95dcd25c7c.jpg',
       available: true,
       description: 'Энергичный малыш с любопытным характером. Очень игривый и активный. Отлично ладит с детьми и другими животными.',
@@ -112,11 +112,11 @@ function Index() {
       age: '3.5 месяца',
       gender: 'Девочка',
       color: 'Кремово-серый',
-      price: '88 000 ₽',
+      price: '350 000 ₽',
       image: 'https://cdn.poehali.dev/files/351fdd97-76e4-40cc-ae23-0f39d002483d.jpg',
       available: true,
       description: 'Утончённая красавица редкого окраса. Спокойная и интеллигентная. Прекрасно подходит для разведения и выставочной карьеры.',
-      parents: 'Мать: Ch. Королева Клеопатра / Отец: GrCh. Рамзес II',
+      parents: 'Мать: Ch. Микки / Отец: GrCh. Рамзес II',
       vaccinations: ['Полная вакцинация', 'Ревакцинация', 'Обработка от паразитов'],
       documents: ['Родословная TICA', 'Ветеринарный паспорт', 'Договор купли-продажи', 'Метрика котёнка']
     }
@@ -125,17 +125,17 @@ function Index() {
   const breeders: Breeder[] = [
     {
       id: 1,
-      name: 'Королева Клеопатра',
+      name: 'Микки',
       title: 'Чемпион WCF',
       achievements: 'Многократная победительница международных выставок, лучшая производительница 2023',
       image: 'https://cdn.poehali.dev/projects/20a04798-865f-48e1-9edb-4a0b9194bd6b/files/675812bf-89eb-4bf2-9643-a5567d898692.jpg'
     },
     {
       id: 2,
-      name: 'Граф Дракула',
+      name: 'Сапфир',
       title: 'Гранд Чемпион TICA',
       achievements: 'Потомок чемпионов, идеальная линия разведения, отец 15 чемпионов',
-      image: 'https://cdn.poehali.dev/projects/20a04798-865f-48e1-9edb-4a0b9194bd6b/files/675812bf-89eb-4bf2-9643-a5567d898692.jpg'
+      image: 'https://cdn.poehali.dev/files/7c3d66aa-09b5-4f45-a1a8-e83e6c16f14a.jpg'
     }
   ];
 
@@ -420,7 +420,7 @@ function Index() {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Телефон</div>
-                    <div className="font-semibold">+7 (999) 123-45-67</div>
+                    <div className="font-semibold">+7 (977) 614-00-50</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
