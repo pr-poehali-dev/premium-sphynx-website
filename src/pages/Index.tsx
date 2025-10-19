@@ -168,7 +168,7 @@ function Index() {
             </div>
             <div className="animate-scale-in">
               <img
-                src="https://cdn.poehali.dev/projects/20a04798-865f-48e1-9edb-4a0b9194bd6b/files/675812bf-89eb-4bf2-9643-a5567d898692.jpg"
+                src="https://cdn.poehali.dev/files/6b4881b9-d652-4ab7-b9e7-353ebbd70efa.jpg"
                 alt="Канадский сфинкс"
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover hover:scale-105 transition-transform duration-500"
               />
