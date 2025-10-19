@@ -153,7 +153,7 @@ function Index() {
                 Канадские сфинксы <span className="text-primary">элитного разведения</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8">
-                Более 10 лет мы разводим канадских сфинксов чемпионских линий. 
+                Более 3 лет мы разводим канадских сфинксов чемпионских линий. 
                 Наши котята здоровы, социализированы и имеют все необходимые документы.
               </p>
               <div className="flex gap-4">
@@ -309,7 +309,7 @@ function Index() {
               <div className="space-y-4 text-muted-foreground text-lg">
                 <p>
                   Питомник <span className="text-primary font-semibold">ROYAL SPHYNX</span> специализируется 
-                  на разведении канадских сфинксов премиум-класса с 2013 года.
+                  на разведении канадских сфинксов премиум-класса с 2021 года.
                 </p>
                 <p>
                   Мы работаем только с лучшими чемпионскими линиями из Европы и США, 
@@ -317,8 +317,8 @@ function Index() {
                 </p>
                 <div className="grid grid-cols-2 gap-6 mt-8">
                   <div className="text-center p-6 bg-card rounded-xl">
-                    <div className="text-4xl font-bold text-primary mb-2">10+</div>
-                    <div className="text-sm text-muted-foreground">Лет опыта</div>
+                    <div className="text-4xl font-bold text-primary mb-2">3+</div>
+                    <div className="text-sm text-muted-foreground">Года опыта</div>
                   </div>
                   <div className="text-center p-6 bg-card rounded-xl">
                     <div className="text-4xl font-bold text-primary mb-2">50+</div>
