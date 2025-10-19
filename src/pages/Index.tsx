@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import Icon from '@/components/ui/icon';
 
 interface Kitten {
@@ -15,6 +16,10 @@ interface Kitten {
   price: string;
   image: string;
   available: boolean;
+  description: string;
+  parents: string;
+  vaccinations: string[];
+  documents: string[];
 }
 
 interface Breeder {
@@ -27,6 +32,8 @@ interface Breeder {
 
 function Index() {
   const [activeSection, setActiveSection] = useState('home');
+  const [selectedKitten, setSelectedKitten] = useState<Kitten | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const kittens: Kitten[] = [
     {
@@ -37,7 +44,11 @@ function Index() {
       color: 'Голубой',
       price: '80 000 ₽',
       image: 'https://cdn.poehali.dev/projects/20a04798-865f-48e1-9edb-4a0b9194bd6b/files/51a59bca-92f4-4831-98a0-fb9da4c30d47.jpg',
-      available: true
+      available: true,
+      description: 'Активный и игривый котёнок с отличным характером. Очень ласковый, любит внимание и общение с людьми. Идеально подойдёт для семьи с детьми.',
+      parents: 'Мать: Ch. Афродита Блю / Отец: GrCh. Зевс Импириал',
+      vaccinations: ['Первая комплексная вакцинация', 'Обработка от паразитов', 'Ветеринарный паспорт'],
+      documents: ['Родословная WCF', 'Ветеринарный паспорт', 'Договор купли-продажи', 'Метрика котёнка']
     },
     {
       id: 2,
@@ -47,7 +58,11 @@ function Index() {
       color: 'Кремовый',
       price: '90 000 ₽',
       image: 'https://cdn.poehali.dev/projects/20a04798-865f-48e1-9edb-4a0b9194bd6b/files/51a59bca-92f4-4831-98a0-fb9da4c30d47.jpg',
-      available: true
+      available: true,
+      description: 'Элегантная девочка с королевскими манерами. Спокойная, но любознательная. Отличный экстерьер, подходит для выставок и разведения.',
+      parents: 'Мать: Ch. Королева Клеопатра / Отец: GrCh. Граф Дракула',
+      vaccinations: ['Первая комплексная вакцинация', 'Ревакцинация через 21 день', 'Обработка от паразитов'],
+      documents: ['Родословная WCF', 'Ветеринарный паспорт', 'Договор купли-продажи', 'Гарантия здоровья']
     },
     {
       id: 3,
@@ -57,7 +72,11 @@ function Index() {
       color: 'Черный',
       price: '85 000 ₽',
       image: 'https://cdn.poehali.dev/projects/20a04798-865f-48e1-9edb-4a0b9194bd6b/files/51a59bca-92f4-4831-98a0-fb9da4c30d47.jpg',
-      available: false
+      available: false,
+      description: 'Уверенный в себе котёнок с выставочным потенциалом. Уже забронирован любящей семьей.',
+      parents: 'Мать: Ch. Нефертити / Отец: GrCh. Рамзес II',
+      vaccinations: ['Полная вакцинация', 'Прививка от бешенства', 'Обработка от паразитов'],
+      documents: ['Родословная TICA', 'Ветеринарный паспорт', 'Договор купли-продажи']
     }
   ];
 
@@ -203,7 +222,13 @@ function Index() {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold text-primary">{kitten.price}</span>
-                    <Button disabled={!kitten.available}>
+                    <Button 
+                      disabled={!kitten.available}
+                      onClick={() => {
+                        setSelectedKitten(kitten);
+                        setIsDialogOpen(true);
+                      }}
+                    >
                       {kitten.available ? 'Узнать больше' : 'Забронирован'}
                     </Button>
                   </div>
@@ -401,6 +426,121 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+          {selectedKitten && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-3xl font-bold">{selectedKitten.name}</DialogTitle>
+              </DialogHeader>
+              <div className="space-y-6">
+                <img
+                  src={selectedKitten.image}
+                  alt={selectedKitten.name}
+                  className="w-full h-96 object-cover rounded-xl"
+                />
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <Icon name="Calendar" size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-muted-foreground">Возраст</div>
+                      <div className="font-semibold">{selectedKitten.age}</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <Icon name="User" size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-muted-foreground">Пол</div>
+                      <div className="font-semibold">{selectedKitten.gender}</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <Icon name="Palette" size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-muted-foreground">Окрас</div>
+                      <div className="font-semibold">{selectedKitten.color}</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 bg-secondary/10 rounded-lg">
+                      <Icon name="DollarSign" size={20} className="text-secondary" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-muted-foreground">Цена</div>
+                      <div className="font-semibold text-primary">{selectedKitten.price}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold mb-2 flex items-center gap-2">
+                    <Icon name="FileText" size={20} />
+                    Описание
+                  </h3>
+                  <p className="text-muted-foreground">{selectedKitten.description}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold mb-2 flex items-center gap-2">
+                    <Icon name="Users" size={20} />
+                    Родители
+                  </h3>
+                  <p className="text-muted-foreground">{selectedKitten.parents}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold mb-3 flex items-center gap-2">
+                    <Icon name="Shield" size={20} />
+                    Здоровье
+                  </h3>
+                  <div className="space-y-2">
+                    {selectedKitten.vaccinations.map((vaccination, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <Icon name="Check" size={16} className="text-secondary" />
+                        <span className="text-muted-foreground">{vaccination}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold mb-3 flex items-center gap-2">
+                    <Icon name="FileCheck" size={20} />
+                    Документы
+                  </h3>
+                  <div className="space-y-2">
+                    {selectedKitten.documents.map((doc, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <Icon name="Check" size={16} className="text-secondary" />
+                        <span className="text-muted-foreground">{doc}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex gap-3 pt-4">
+                  <Button size="lg" className="flex-1">
+                    <Icon name="Phone" size={18} className="mr-2" />
+                    Позвонить
+                  </Button>
+                  <Button size="lg" variant="outline" className="flex-1">
+                    <Icon name="MessageCircle" size={18} className="mr-2" />
+                    Написать
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
